@@ -1,17 +1,24 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>404 Not Found - Страница не найдена</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>404 Not Found - Страница не найдена</title>
 </head>
+
 <body style="font-family: Tahoma, Verdana, Arial;">
-<table border="0" width="100%" height="100%">
-<tr><td align="center" valign="middle">
-<h3 style="width: 50%; border: 1px Solid #b7daab; padding: 10px; background-color: #e7f9ff;">404 Not Found<br>Cтраница не найдена</h3>
-<p>Эта страница сгенерирована автоматически <a href="http://eurobyte.ru/" target=_blank>хостингом Евробайт</a>.</p>
-</td></tr>
-</table>
+    <table border="0" width="100%" height="100%">
+        <tr>
+            <td align="center" valign="middle">
+                <h3 style="width: 50%; border: 1px Solid #b7daab; padding: 10px; background-color: #e7f9ff;">404 Not
+                    Found<br>Cтраница не найдена</h3>
+                <p>Эта страница сгенерирована автоматически <a href="http://eurobyte.ru/" target=_blank>хостингом
+                        Евробайт</a>.</p>
+            </td>
+        </tr>
+    </table>
 </body>
+
 </html>
 <!--
    - Unfortunately, Microsoft has added a clever new
