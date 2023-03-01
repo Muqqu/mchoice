@@ -13,8 +13,8 @@ class HomeController extends Controller
     {
         //$this->middleware('auth:admin');
         session_start();
-        if (! isset($_SESSION['admin']) || empty($_SESSION['admin'])) {
-            header('Location: '.route('admin.login'));
+        if (!isset($_SESSION['admin']) || empty($_SESSION['admin'])) {
+            header('Location: ' . route('admin.login'));
             exit;
         }
 
@@ -70,7 +70,7 @@ class HomeController extends Controller
             $plural_caps = ucwords(str_replace('_', ' ', Str::snake(Str::plural($model))));
             $count[$i]->name = $plural_caps;
             $count[$i]->icon = $icon;
-            $model = $ns.$model;
+            $model = $ns . $model;
             if ($count[$i]->total = $model::all()->count()) {
                 $count[$i]->last = $model::whereRaw("created_at BETWEEN DATE_SUB('$today', INTERVAL 1 MONTH) AND '$today'")
                     ->get()
