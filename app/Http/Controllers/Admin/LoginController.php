@@ -125,7 +125,7 @@ class LoginController extends Controller
     public function logout()
     {
         unset($_SESSION['admin']);
-        header('Location: '.route('admin.login'));
+        header('Location: ' . route('admin.login'));
         exit;
     }
 }
