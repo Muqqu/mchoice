@@ -77,14 +77,14 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        $title = 'Edit #'.ucwords($page->id).' Page | Agwis Admin';
+        $title = 'Edit #' . ucwords($page->id) . ' Page | Agwis Admin';
 
         $followers = User::whereIn('id', function ($query) use ($page) {
             $query->select('user_id')
                 ->from('page_followers')
                 ->where('page_id', $page->id);
         })
-        ->get();
+            ->get();
 
         return view('admin.page.edit', compact('page', 'followers', 'title'));
     }
@@ -117,7 +117,7 @@ class PageController extends Controller
             return back()->with('error', 'Error in updating Page!');
         }
 
-        if (! in_array($page->user_id, $validated['followers'])) {
+        if (!in_array($page->user_id, $validated['followers'])) {
             //
         }
 
@@ -135,8 +135,8 @@ class PageController extends Controller
             $key = in_array($member, $request->followers);
             if ($key === false) {
                 $result = PageFollower::where('user_id', $member)
-                ->where('page_id', $page->id)
-                ->delete();
+                    ->where('page_id', $page->id)
+                    ->delete();
             }
         }
 
@@ -172,7 +172,7 @@ class PageController extends Controller
         $isExist = Storage::disk('public')->exists($page->profile);
         if ($isExist) {
             $isDeleted = Storage::disk('public')->delete($page->profile);
-            if (! $isDeleted) {
+            if (!$isDeleted) {
                 //
             }
         }
@@ -192,7 +192,7 @@ class PageController extends Controller
         $isExist = Storage::disk('public')->exists($page->profile);
         if ($isExist) {
             $isDeleted = Storage::disk('public')->delete($page->profile);
-            if (! $isDeleted) {
+            if (!$isDeleted) {
                 //
             }
         }
