@@ -119,7 +119,7 @@ class UserController extends Controller
             'mobile' => $request->mobile,
         ];
 
-        if (! empty($request->profile)) {
+        if (!empty($request->profile)) {
             $request->validate([
                 'profile' => 'required|image|mimes:jpeg,jpg,png,gif,svg|max:2048',
             ]);
