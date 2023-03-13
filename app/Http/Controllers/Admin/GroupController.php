@@ -66,14 +66,14 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        $title = ucwords($group->name).' Group | Agwis Admin';
+        $title = ucwords($group->name) . ' Group | Agwis Admin';
 
         $members = User::whereIn('id', function ($query) use ($group) {
             $query->select('user_id')
                 ->from('group_members')
                 ->where('group_id', $group->id);
         })
-        ->get();
+            ->get();
 
         return view('admin.group.show', compact('group', 'members', 'title'));
     }
@@ -86,14 +86,14 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        $title = 'Edit #'.ucwords($group->id).' Group | Agwis Admin';
+        $title = 'Edit #' . ucwords($group->id) . ' Group | Agwis Admin';
 
         $members = User::whereIn('id', function ($query) use ($group) {
             $query->select('user_id')
                 ->from('group_members')
                 ->where('group_id', $group->id);
         })
-        ->get();
+            ->get();
 
         return view('admin.group.edit', compact('group', 'members', 'title'));
     }
@@ -124,7 +124,7 @@ class GroupController extends Controller
             return back()->with('error', 'Error in updating group!');
         }
 
-        if (! in_array($group->user_id, $validated['members'])) {
+        if (!in_array($group->user_id, $validated['members'])) {
             //
         }
 
@@ -142,8 +142,8 @@ class GroupController extends Controller
             $key = in_array($member, $request->members);
             if ($key === false) {
                 $result = GroupMember::where('user_id', $member)
-                ->where('group_id', $group_id)
-                ->delete();
+                    ->where('group_id', $group_id)
+                    ->delete();
             }
         }
 
@@ -179,7 +179,7 @@ class GroupController extends Controller
         $isExist = Storage::disk('public')->exists($group->profile);
         if ($isExist) {
             $isDeleted = Storage::disk('public')->delete($group->profile);
-            if (! $isDeleted) {
+            if (!$isDeleted) {
                 //
             }
         }
@@ -199,7 +199,7 @@ class GroupController extends Controller
         $isExist = Storage::disk('public')->exists($group->profile);
         if ($isExist) {
             $isDeleted = Storage::disk('public')->delete($group->profile);
-            if (! $isDeleted) {
+            if (!$isDeleted) {
                 //
             }
         }
